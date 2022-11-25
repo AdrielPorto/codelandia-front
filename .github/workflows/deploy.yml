@@ -47,4 +47,4 @@ jobs:
           script: |
             sudo docker rm -f codelandia
             sudo docker pull adrielporto/codelandia:latest
-            sudo docker run --name=codelandia --network host -p 5173:5173 adrielporto/codelandia npm run dev
+            sudo docker run --name=codelandia --network host -p 3000:3000 adrielporto/codelandia npm run dev
