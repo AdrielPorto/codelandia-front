@@ -40,11 +40,11 @@ jobs:
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
-          host: "ec2-44-204-233-174.compute-1.amazonaws.com"
+          host: "c2-3-86-163-207.compute-1.amazonaws.com"
           username: "ubuntu"
           key: ${{ secrets.SSH_KEY_RSA }}
           port: ${{ secrets.PORT }}
           script: |
             sudo docker rm -f codelandia
             sudo docker pull adrielporto/codelandia:latest
-            sudo docker run --name=codelandia --network host -p 3000:3000 adrielporto/codelandia npm run dev
+            sudo docker run -d --name=codelandia --network host -p 5173:5173 adrielporto/codelandia npm run dev
